@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+    background-color: rgb(226, 201, 163);
+}
+
+header{
+    height:75px;
+    background-color: red;
+}
+
+#mobile-header,#desktop-header{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#nav-mobile{
+    z-index: 999;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    top: 0;
+    right: 0;
+    width: 70vw;
+    height: 100vh;
+    background-color: black;
+}
+
+.navbar-list-mobile{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    margin-top: 50px;
+    gap: 35px;
+}
+
+#social-network-container-mobile{
+    margin-top: auto;
+    margin-bottom: 25px;
+    margin-left: 25px;
+}
+
+.navbar-item-mobile a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#desktop-header{
+    justify-content: space-between;
+}
+
+#navbar-list-desktop{
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+.navbar-item-destkop{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+
+@media screen and (max-width:1200px){
+    #mobile-header{
+        display: flex;
+    }
+    #desktop-header{
+        display: none;
+    }
+}
+
+@media screen and (min-width:1200px){
+    #mobile-header{
+        display: none;
+    }
+    #desktop-header{
+        display: flex;
+    }
+}
