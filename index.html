@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
     <header>
+        <div id="overlay" onclick="closeNavbar()"></div>
         <div id="mobile-header">
             <nav id="nav-mobile" style="display: none;">
                 <svg style="cursor:pointer;margin-top:20px;margin-left:20px" onclick="closeNavbar()" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
@@ -53,11 +55,25 @@
         </div>
     </header>
     <script>
-        function showNavbar(){
+        function showNavbar() {
             document.getElementById("nav-mobile").style.display = "flex";
+            // Attendre un peu avant d'appliquer la classe pour que la transition fonctionne
+            setTimeout(() => {
+                document.getElementById("nav-mobile").classList.add("open");
+            }, 10);
+            // Afficher l'overlay
+            document.getElementById("overlay").style.display = "block";
         }
-        function closeNavbar(){
-            document.getElementById("nav-mobile").style.display = "none";
+
+        function closeNavbar() {
+            // Enlever la classe pour déclencher l'animation de fermeture
+            document.getElementById("nav-mobile").classList.remove("open");
+            // Cacher l'overlay
+            document.getElementById("overlay").style.display = "none";
+            // Attendre la fin de l'animation avant de masquer complètement
+            setTimeout(() => {
+                document.getElementById("nav-mobile").style.display = "none";
+            }, 300); // Durée égale à la transition
         }
     </script>
 </body>
